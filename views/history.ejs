@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 100%;
+            border: 2px;
+        }
+        th, td{
+            text-align: center;
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>History</h1>
+    <div style="overflow-x: auto;">
+        <table class="tab">
+            <tr>
+                <th>Number1</th>
+                <th>Operator</th>
+                <th>Number2</th>
+                <th>Sum</th>
+                <th>Time of Entry</th>
+            </tr>
+            <%
+                if(item.length!=0){
+                    var i=1;
+                    item.forEach(function(data){
+            %>
+            <tr>
+                <td><%=data.first_no %></td>
+                <td><%=data.operator %></td>
+                <td><%=data.second_no %></td>
+                <td><%=data.sum %></td>
+                <td><%=data.doe %></td>
+            </tr>
+            <% i++;}) %>
+            <% } else
+            {
+                %>
+                <tr>
+                    <td>NO Data Found</td>
+                </tr>
+           <% } %>
+        </table>
+    </div>
+</body>
+</html>

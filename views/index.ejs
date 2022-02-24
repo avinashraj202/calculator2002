@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="viewport" content="width=device-width, intial-scale=1">
+    <title>Calculator</title>
+    <style>
+        *{
+          margin:0;
+          padding:0;
+          box-sizing:border-box;
+        }
+        .container {
+          width: 340px;
+          height: 360px;
+          padding: 10px;
+          border-radius: 10px;
+          margin-left:500px;
+          margin-top:100px;
+          background-color: #f2f2f2;
+          text-align:center;
+        }
+        
+        .h1{
+          margin-bottom: 5px;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .inp1{
+          margin-top: 3px;
+          padding: 5px 30px;
+          text-decoration: none;
+          border-radius: 10px;
+          margin-bottom: 10px;
+        }
+        .result {
+          margin-bottom: 10px;
+          padding: 0 10px;
+          background-color: #f2f2f2f2;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          color: white;
+          font-weight: bold;
+          box-sizing: border-box;
+        }
+       .btn{
+          padding: 4px 23px;
+          border-radius: 8px;
+          border: 2px solid gray;
+          text-decoration: none;
+          margin-bottom: 10px;
+        }
+        .equal-button {
+          width:30px;
+          background-color: rgb(105, 49, 236) ;
+          padding: 2px 30px;
+        }
+
+        
+        .clear-button {
+          width:30px;
+          background-color:rgb(206, 48, 48);
+          padding: 2px 30px;
+          text-align: center;
+        }
+
+       
+        @media(max-width: 576px) {
+          .container {
+            width: 340px;
+            height: 360px;
+            padding: 10px;
+            border-radius: 10px;
+            margin-left:450px;
+            margin-top:50px;
+            background-color: #485461;
+            text-align:center;
+          }
+        }
+        </style>
+  </head>
+<body>
+  <div class="container">
+      <h1>Calculator</h1>
+      <form action="/" method="post" target="output" class="form1">
+        <input type="text" name="num1" placeholder="First Number" class="inp1" required><br>
+        <input type="text" name="num2" placeholder="Second Number" class="inp1" required><br>
+        <input type="button" value="+" name="button" onclick="oper(this.value)" class="btn">
+        <input type="button" value="-" name="button" onclick="oper(this.value)" class="btn">
+        <input type="button" value="*" name="button" onclick="oper(this.value)" class="btn">
+        <input type="button" value="/" name="button" onclick="oper(this.value)" class="btn"><br>
+        <!--<input type="button" value="%" name="button" onclick="oper(this.value)" class="btn">-->
+        <button type="submit" name="submit" id="equalbtn" class="equal-button">=</button>
+        <input type="reset" value="AC" class="clear-button"><br><br>
+        <iframe name="output" src="" width="300" class="result" height="50">
+        </iframe>
+      </form>
+      <a href="/user/history1"><button class="btn-his">History</button></a>
+    </div>
+    <script>
+    function oper(val) {
+      document.getElementById("equalbtn").value = val;
+    }
+  </script>
+  </body>
+</html>
